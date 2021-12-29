@@ -1,0 +1,89 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  align-items: center;
+  background: black;
+  display: flex;
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(300deg, deepskyblue, darkviolet, blue);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+  font-family: sans-serif;
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 290px;
+  max-width: 252px;
+  perspective: 700px;
+}
+
+.book {
+  background: #5564ee;
+  box-shadow: 4px 4px 0 white, 2px 8px 0 #5564ee, 8px 8px #5564ee,
+    8px 2px #5564ee;
+  display: flex;
+  flex-direction: column;
+  height: 290px;
+  justify-content: space-around;
+  position: relative;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  width: 252px;
+}
+
+.book:hover {
+  transform: rotateY(-50deg);
+}
+
+.union {
+  background: rgb(171, 195, 240);
+  height: 10px;
+  margin-left: 5px;
+  position: relative;
+  width: 10px;
+}
+
+.union::after,
+.union::before {
+  background: #0f0f0f;
+  border-radius: 8px;
+  bottom: unset;
+  content: "";
+  height: 2px;
+  left: -12px;
+  position: absolute;
+  top: unset;
+  width: 12px;
+}
+
+.union::after {
+  top: 2px;
+}
+
+.union::before {
+  bottom: 2px;
+}
+
+.texto {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
